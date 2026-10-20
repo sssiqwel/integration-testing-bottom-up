@@ -53,25 +53,27 @@ make install
 make test
 ```
 
-`make install` создаёт `.venv` и ставит зависимости. Сервисы отдельно запускать не нужно: тесты поднимают их сами.
+`make install` создаёт `.venv` и ставит зависимости.
 
-`make test` идёт строго снизу вверх. Если нижний этап не прошёл, верхние не запускаются. Вывод каждого этапа сохраняется в `results/`.
+<img src="screenshots/01-install.png" alt="make install" width="1100">
 
-Один этап отдельно:
+Сервисы отдельно запускать не нужно: тесты поднимают их сами.
+
+Первый этап, модели и хранилище пользователей:
 
 ```bash
 .venv/bin/python -m pytest tests/test_bu1_users_storage.py -v
 ```
 
-## Результат
+<img src="screenshots/02-stage1.png" alt="Первый этап: 10 passed" width="1100">
 
-```
-test_bu1_users_storage: ok — 10 passed
-test_bu2_orders_storage: ok — 11 passed
-test_bu3_users_api: ok — 8 passed, 1 xfailed
-test_bu4_users_client: ok — 6 passed
-test_bu5_orders_api: ok — 6 passed, 3 xfailed
-```
+`make test` идёт строго снизу вверх. Если нижний этап не прошёл, верхние не запускаются. Вывод каждого этапа сохраняется в `results/`.
+
+<img src="screenshots/03-stages-1.png" alt="Этапы 1 и 2" width="1100">
+
+<img src="screenshots/03-stages-2.png" alt="Этапы 3, 4 и 5" width="1100">
+
+<img src="screenshots/03-stages-3.png" alt="Итог по этапам" width="990">
 
 `xfailed` здесь не сбой запуска. Так помечены тесты на уже найденные дефекты: пока дефект в коде есть, тест падает, и это ожидаемо. Посмотреть их как обычные падения:
 
@@ -79,7 +81,9 @@ test_bu5_orders_api: ok — 6 passed, 3 xfailed
 make defects
 ```
 
-Будет `4 failed`, по одному тесту на каждый дефект.
+<img src="screenshots/04-defects.png" alt="make defects: 4 failed" width="1100">
+
+`4 failed` — по одному тесту на каждый дефект.
 
 ## Что вышло на этапах
 
@@ -104,6 +108,7 @@ make defects
 users_service/     Users API
 orders_service/    Orders API
 tests/             этапы и общие фикстуры
+screenshots/       скриншоты прогона
 results/           вывод прогона по этапам
 report/            отчёт
 run_stages.sh      запуск этапов по очереди
