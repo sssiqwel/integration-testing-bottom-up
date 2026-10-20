@@ -44,10 +44,9 @@
 
 ## Запуск
 
-Нужен Python 3.12 или новее.
+Нужен Python 3.12 или новее. Команды выполняются из папки репозитория.
 
 ```bash
-git clone https://github.com/sssiqwel/integration-testing-bottom-up.git
 cd integration-testing-bottom-up
 make install
 make test
