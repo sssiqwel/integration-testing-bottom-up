@@ -1,0 +1,20 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-8.3.4, pluggy-1.6.0 -- /Users/liriohq/projects/user-order-services/.venv/bin/python
+rootdir: /Users/liriohq/projects/integration-testing-bottom-up
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collecting ... collected 11 items
+
+tests/test_bu2_orders_storage.py::test_bu2_01_empty_on_start PASSED      [  9%]
+tests/test_bu2_orders_storage.py::test_bu2_02_create_get_list PASSED     [ 18%]
+tests/test_bu2_orders_storage.py::test_bu2_03_item_is_trimmed PASSED     [ 27%]
+tests/test_bu2_orders_storage.py::test_bu2_04_invalid_order_rejected[user-id-0] PASSED [ 36%]
+tests/test_bu2_orders_storage.py::test_bu2_04_invalid_order_rejected[blank-item] PASSED [ 45%]
+tests/test_bu2_orders_storage.py::test_bu2_04_invalid_order_rejected[zero-qty] PASSED [ 54%]
+tests/test_bu2_orders_storage.py::test_bu2_04_invalid_order_rejected[too-many] PASSED [ 63%]
+tests/test_bu2_orders_storage.py::test_bu2_04_invalid_order_rejected[extra-field] PASSED [ 72%]
+tests/test_bu2_orders_storage.py::test_bu2_05_storage_does_not_know_about_users PASSED [ 81%]
+tests/test_bu2_orders_storage.py::test_bu2_06_order_model_builds_from_stored_order_and_user PASSED [ 90%]
+tests/test_bu2_orders_storage.py::test_bu2_07_user_snapshot_is_strict PASSED [100%]
+
+============================== 11 passed in 0.08s ==============================

@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-8.3.4, pluggy-1.6.0 -- /Users/liriohq/projects/user-order-services/.venv/bin/python
+rootdir: /Users/liriohq/projects/integration-testing-bottom-up
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collecting ... collected 6 items
+
+tests/test_bu4_users_client.py::test_bu4_01_existing_user PASSED         [ 16%]
+tests/test_bu4_users_client.py::test_bu4_02_user_created_through_api_is_visible PASSED [ 33%]
+tests/test_bu4_users_client.py::test_bu4_03_missing_user_raises_404 PASSED [ 50%]
+tests/test_bu4_users_client.py::test_bu4_04_users_api_down_raises_503 PASSED [ 66%]
+tests/test_bu4_users_client.py::test_bu4_05_request_id_is_forwarded PASSED [ 83%]
+tests/test_bu4_users_client.py::test_bu4_06_contract_users_response_fits_order_snapshot PASSED [100%]
+
+============================== 6 passed in 0.28s ===============================

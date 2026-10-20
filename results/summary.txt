@@ -1,0 +1,5 @@
+test_bu1_users_storage: ok — 10 passed in 0.08s
+test_bu2_orders_storage: ok — 11 passed in 0.08s
+test_bu3_users_api: ok — 8 passed, 1 xfailed in 0.28s
+test_bu4_users_client: ok — 6 passed in 0.28s
+test_bu5_orders_api: ok — 6 passed, 3 xfailed in 0.59s

@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-8.3.4, pluggy-1.6.0 -- /Users/liriohq/projects/user-order-services/.venv/bin/python
+rootdir: /Users/liriohq/projects/integration-testing-bottom-up
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collecting ... collected 9 items
+
+tests/test_bu5_orders_api.py::test_bu5_01_end_to_end PASSED              [ 11%]
+tests/test_bu5_orders_api.py::test_bu5_02_errors_do_not_create_orders[missing-user] PASSED [ 22%]
+tests/test_bu5_orders_api.py::test_bu5_02_errors_do_not_create_orders[invalid-body] PASSED [ 33%]
+tests/test_bu5_orders_api.py::test_bu5_02_errors_do_not_create_orders[no-token] PASSED [ 44%]
+tests/test_bu5_orders_api.py::test_bu5_03_users_api_down PASSED          [ 55%]
+tests/test_bu5_orders_api.py::test_bu5_04_list_time_grows_with_orders PASSED [ 66%]
+tests/test_bu5_orders_api.py::test_bu5_05_list_after_users_restart XFAIL [ 77%]
+tests/test_bu5_orders_api.py::test_bu5_06_existing_order_after_users_restart XFAIL [ 88%]
+tests/test_bu5_orders_api.py::test_bu5_07_order_never_shows_another_person XFAIL [100%]
+
+=========================== short test summary info ============================
+XFAIL tests/test_bu5_orders_api.py::test_bu5_05_list_after_users_restart - BU-D2: после рестарта Users один пропавший пользователь роняет GET /orders
+XFAIL tests/test_bu5_orders_api.py::test_bu5_06_existing_order_after_users_restart - BU-D3: существующий заказ после рестарта Users отвечает 404
+XFAIL tests/test_bu5_orders_api.py::test_bu5_07_order_never_shows_another_person - BU-D4: id пользователя переиспользуется, заказ показывает другого человека
+========================= 6 passed, 3 xfailed in 0.59s =========================

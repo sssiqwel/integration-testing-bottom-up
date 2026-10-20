@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-8.3.4, pluggy-1.6.0 -- /Users/liriohq/projects/user-order-services/.venv/bin/python
+rootdir: /Users/liriohq/projects/integration-testing-bottom-up
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collecting ... collected 10 items
+
+tests/test_bu1_users_storage.py::test_bu1_01_seed_users PASSED           [ 10%]
+tests/test_bu1_users_storage.py::test_bu1_02_create_assigns_next_id PASSED [ 20%]
+tests/test_bu1_users_storage.py::test_bu1_03_model_normalizes_before_storage PASSED [ 30%]
+tests/test_bu1_users_storage.py::test_bu1_04_duplicate_email_differs_only_in_case PASSED [ 40%]
+tests/test_bu1_users_storage.py::test_bu1_05_invalid_input_is_rejected_by_model[blank-name] PASSED [ 50%]
+tests/test_bu1_users_storage.py::test_bu1_05_invalid_input_is_rejected_by_model[long-name] PASSED [ 60%]
+tests/test_bu1_users_storage.py::test_bu1_05_invalid_input_is_rejected_by_model[bad-email] PASSED [ 70%]
+tests/test_bu1_users_storage.py::test_bu1_05_invalid_input_is_rejected_by_model[extra-field] PASSED [ 80%]
+tests/test_bu1_users_storage.py::test_bu1_06_missing_user_is_none PASSED [ 90%]
+tests/test_bu1_users_storage.py::test_bu1_07_reset_restarts_id_counter PASSED [100%]
+
+============================== 10 passed in 0.08s ==============================

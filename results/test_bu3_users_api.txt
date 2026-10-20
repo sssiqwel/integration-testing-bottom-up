@@ -1,0 +1,20 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-8.3.4, pluggy-1.6.0 -- /Users/liriohq/projects/user-order-services/.venv/bin/python
+rootdir: /Users/liriohq/projects/integration-testing-bottom-up
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collecting ... collected 9 items
+
+tests/test_bu3_users_api.py::test_bu3_01_health_and_list PASSED          [ 11%]
+tests/test_bu3_users_api.py::test_bu3_02_create_returns_location_and_is_readable PASSED [ 22%]
+tests/test_bu3_users_api.py::test_bu3_03_duplicate_email_is_409 PASSED   [ 33%]
+tests/test_bu3_users_api.py::test_bu3_04_errors_of_get PASSED            [ 44%]
+tests/test_bu3_users_api.py::test_bu3_05_invalid_body_is_422 PASSED      [ 55%]
+tests/test_bu3_users_api.py::test_bu3_06_auth[no-token] PASSED           [ 66%]
+tests/test_bu3_users_api.py::test_bu3_06_auth[wrong-token] PASSED        [ 77%]
+tests/test_bu3_users_api.py::test_bu3_07_request_id_echo_and_generation PASSED [ 88%]
+tests/test_bu3_users_api.py::test_bu3_08_wrong_scheme_has_clear_message XFAIL [100%]
+
+=========================== short test summary info ============================
+XFAIL tests/test_bu3_users_api.py::test_bu3_08_wrong_scheme_has_clear_message - BU-D1: при схеме Basic ответ «Missing Authorization header», хотя заголовок есть
+========================= 8 passed, 1 xfailed in 0.28s =========================
